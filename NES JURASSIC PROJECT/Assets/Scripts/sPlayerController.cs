@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class sPlayerController : MonoBehaviour
 {
+
+    [SerializeField] private float moveSpeed = 5f;
+
     private Rigidbody2D rb;
     private Animator animator;
-
-    public float moveSpeed = 5f;
 
     private float lastHMove = 0.0f;
     private float lastVMove = 0.0f;
 
     Vector2 movement;
+
+    private const string HORIZONTAL = "Horizontal";
 
     void Awake()
     {
@@ -24,21 +27,20 @@ public class sPlayerController : MonoBehaviour
     void Update()
     {
         // input
-        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.x = Input.GetAxisRaw(HORIZONTAL);
         movement.y = Input.GetAxisRaw("Vertical");
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
 
-        if(movement.x == 0 && movement.y == 0)
-        {
+        //animator.SetBool("Moving", movement.x == 0 && movement.y == 0);
+
+        if (movement.x == 0 && movement.y == 0) {
             animator.SetBool("Moving", false);
-            
-        }
-        else
-        {
+
+        } else {
             animator.SetBool("Moving", true);
-            
+
         }
     }
     void FixedUpdate()
