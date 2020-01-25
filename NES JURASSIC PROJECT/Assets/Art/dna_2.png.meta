@@ -13,19 +13,19 @@ TextureImporter:
     second: dna_2_2
   - first:
       213: 3050549670268343273
-    second: dna_2_3
+    second: dna_2_4
   - first:
       213: 8990873529153903796
-    second: dna_2_4
+    second: dna_2_3
   - first:
       213: 5887557166070841535
     second: dna_2_5
   - first:
       213: -286254740459256970
-    second: dna_2_6
+    second: dna_2_5
   - first:
       213: -2833633340870882173
-    second: dna_2_7
+    second: dna_2_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -113,10 +113,10 @@ TextureImporter:
       name: dna_2_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 315
-        width: 232
-        height: 300
+        x: 93
+        y: 333
+        width: 74
+        height: 261
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: dna_2_1
       rect:
         serializedVersion: 2
-        x: 254
-        y: 315
-        width: 232
-        height: 300
+        x: 333
+        y: 334
+        width: 74
+        height: 261
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: dna_2_2
       rect:
         serializedVersion: 2
-        x: 490
-        y: 315
-        width: 232
-        height: 300
+        x: 571
+        y: 334
+        width: 74
+        height: 261
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,15 +173,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dna_2_3
+      name: dna_2_7
       rect:
         serializedVersion: 2
-        x: 726
-        y: 12
-        width: 232
-        height: 300
+        x: 799
+        y: 31
+        width: 74
+        height: 261
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,15 +194,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dna_2_4
+      name: dna_2_3
       rect:
         serializedVersion: 2
-        x: 726
-        y: 315
-        width: 232
-        height: 300
+        x: 806
+        y: 333
+        width: 74
+        height: 261
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,15 +215,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dna_2_5
+      name: dna_2_6
       rect:
         serializedVersion: 2
-        x: 490
-        y: 12
-        width: 232
-        height: 300
+        x: 565
+        y: 30
+        width: 74
+        height: 261
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,15 +236,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dna_2_6
+      name: dna_2_5
       rect:
         serializedVersion: 2
-        x: 254
-        y: 12
-        width: 232
-        height: 300
+        x: 330
+        y: 31
+        width: 74
+        height: 261
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,15 +257,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dna_2_7
+      name: dna_2_4
       rect:
         serializedVersion: 2
-        x: 18
-        y: 12
-        width: 232
-        height: 300
+        x: 95
+        y: 31
+        width: 74
+        height: 261
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
