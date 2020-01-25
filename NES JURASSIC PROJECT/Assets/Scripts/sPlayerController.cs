@@ -132,7 +132,7 @@ public class sPlayerController : MonoBehaviour
             //Enable or disable bullet
             EnableOrDisableBullet(intPoolIndex, true);
             //Make bullet move
-            zsPublicStatics.Bullets.Rigidbodies[intPoolIndex].AddForce(Weapon.transform.forward * WeaponForce,ForceMode2D.Force);
+            zsPublicStatics.Bullets.Rigidbodies[intPoolIndex].AddForce(Weapon.transform.forward * WeaponForce, ForceMode2D.Force);
         }
     }
 
