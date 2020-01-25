@@ -19,7 +19,7 @@ public class sPlayerController : MonoBehaviour
     private const string vertical = "Vertical";
 
     [SerializeField] private Transform Weapon;
-    [SerializeField] private float WeaponForce = 50f;
+    [SerializeField] private float WeaponForce = 2f;
     [SerializeField] private PooledObject Bullets;
 
     [System.Serializable]
@@ -132,7 +132,7 @@ public class sPlayerController : MonoBehaviour
             //Enable or disable bullet
             EnableOrDisableBullet(intPoolIndex, true);
             //Make bullet move
-            zsPublicStatics.Bullets.Rigidbodies[intPoolIndex].AddForce(Weapon.transform.forward * WeaponForce);
+            zsPublicStatics.Bullets.Rigidbodies[intPoolIndex].AddForce(Weapon.transform.forward * WeaponForce,ForceMode2D.Force);
         }
     }
 
