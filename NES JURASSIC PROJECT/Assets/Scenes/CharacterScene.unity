@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38074008, b: 0.35872707, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -317,12 +317,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2000
-  Weapon: {fileID: 0}
-  WeaponForce: 50
-  Bullets:
-    Prefab: {fileID: 0}
-    NumberOfObjects: 0
-    Lifetime: 3.5
 --- !u!114 &270669298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,9 +364,10 @@ GameObject:
   - component: {fileID: 522363774}
   - component: {fileID: 522363773}
   - component: {fileID: 522363775}
-  - component: {fileID: 522363776}
   - component: {fileID: 522363777}
   - component: {fileID: 522363778}
+  - component: {fileID: 522363776}
+  - component: {fileID: 522363779}
   m_Layer: 0
   m_Name: Alan
   m_TagString: Untagged
@@ -478,13 +473,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 100
-  Weapon: {fileID: 62582342}
-  WeaponForce: 300
-  Bullets:
-    Prefab: {fileID: 8898145904457912858, guid: 6d036202dc263d2448eb9f00455a924e,
-      type: 3}
-    NumberOfObjects: 10
-    Lifetime: 3.5
 --- !u!95 &522363777
 Animator:
   serializedVersion: 3
@@ -520,6 +508,25 @@ CapsuleCollider2D:
   m_Offset: {x: -0.021483332, y: 0.012883663}
   m_Size: {x: 0.7446037, y: 0.83912647}
   m_Direction: 0
+--- !u!114 &522363779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522363772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b21f5505877f04686abe51831ac244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Weapon: {fileID: 62582342}
+  WeaponForce: 2
+  Bullets:
+    Prefab: {fileID: 8898145904457912858, guid: 6d036202dc263d2448eb9f00455a924e,
+      type: 3}
+    NumberOfObjects: 10
+    Lifetime: 3.5
 --- !u!1 &790213254
 GameObject:
   m_ObjectHideFlags: 3
