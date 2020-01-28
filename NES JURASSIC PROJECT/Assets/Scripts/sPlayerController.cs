@@ -6,7 +6,7 @@ public class sPlayerController : MonoBehaviour
 {
 
     [SerializeField] private float moveSpeed = 5f;
-
+    [SerializeField] private sShooting ShootingScript;
 
 
     private Rigidbody2D rb;
@@ -19,7 +19,7 @@ public class sPlayerController : MonoBehaviour
 
     private const string horizontal = "Horizontal";
     private const string vertical = "Vertical";
-
+    private const string moving = "Moving";
 
 
     void Awake()
@@ -39,6 +39,9 @@ public class sPlayerController : MonoBehaviour
 
         anim();
 
+        //Shoot
+        ShootingScript.ShootUpdate();
+
     }
 
 
@@ -52,21 +55,21 @@ public class sPlayerController : MonoBehaviour
     // animate
     void anim()
     {
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat(horizontal, movement.x);
+        animator.SetFloat(vertical, movement.y);
 
 
         if (movement.x == 0 && movement.y == 0)
         {
-            animator.SetBool("Moving", false);
-            animator.SetFloat("Horizontal", lastHMove);
-            animator.SetFloat("Vertical", lastVMove);
+            animator.SetBool(moving, false);
+            animator.SetFloat(horizontal, lastHMove);
+            animator.SetFloat(vertical, lastVMove);
 
         }
         else {
             lastHMove = movement.x;
             lastVMove = movement.y;
-            animator.SetBool("Moving", true);
+            animator.SetBool(moving, true);
 
         }
     }

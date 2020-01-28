@@ -51,7 +51,7 @@ public class sShooting : MonoBehaviour
         }
     }
 
-    void Update()
+    public void ShootUpdate()
     {
 
         shoot();
