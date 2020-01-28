@@ -12,6 +12,7 @@ public class zsDNAText : MonoBehaviour {
     [SerializeField] private float TimeBetweenLines = 0.5f;
     [SerializeField] private float TimeWaitingAtEnd = 0.5f;
     [SerializeField] private zsAnimationFinished DNAAnimationFinishedScript;
+    [SerializeField] private int BlinkCount = 2;
     [Header("Line Movement")]
     [SerializeField] private float TwoLineYMovement = 35.6f;
     [SerializeField] private float OneLineYMovement = 18.6f;
@@ -25,13 +26,15 @@ public class zsDNAText : MonoBehaviour {
     private enumDNATextModes enumDNATextMode = enumDNATextModes.RegularLine;
     private int intNumberOfWaitsAtEndOfLine = 0;
     private float fltLocalPositionY = 0f;
+    private bool blnWhiteSquareBlink = false;
+    private int intBlinkCount = 0;
 
     //Declare enums
     private enum enumDNATextBreakDowns {
         Timer, Distance
     }
     private enum enumDNATextModes {
-        RegularLine, WaitingAtEnd, NewLines //WaitingAtEnd = $, NewLines = strNEW_LINES, GoingDownTwoLines = /, GoingDownOneLine = |
+        RegularLine, WaitingAtEnd //WaitingAtEnd = $, GoingDownTwoLines = /, GoingDownOneLine = |
     }
 
     //Declare constants
@@ -40,7 +43,8 @@ public class zsDNAText : MonoBehaviour {
     private const string strWAITING_AT_END = "$";
     private const string strGOING_DOWN_TWO_LINES = "/";
     private const string strGOING_DOWN_ONE_LINE = "|";
-    private const int intNUMBER_OF_WAITS_AT_END_OF_LINE = 3;
+    private const string strRETURN = "\r";
+    private const string strNEW_LINE = "\n";
 
     private void Start() {
         //Set
@@ -49,6 +53,8 @@ public class zsDNAText : MonoBehaviour {
         strText = TheText.text;
         //Empty
         TheText.text = strEMPTY;
+        //Set
+        intBlinkCount = BlinkCount + 1;
     }
 
     private void Update() {
@@ -68,8 +74,8 @@ public class zsDNAText : MonoBehaviour {
                                 case enumDNATextModes.RegularLine: //"Just characters"
                                     //Check if not empty
                                     if (TheText.text.Length > 0) {
-                                        //Check if should remove last character
-                                        if (!blnHasAReturnLine()) {
+                                        //Check for white square
+                                        if (TheText.text.Substring(TheText.text.Length - 1, 1) == strWHITE_SQUARE) {
                                             //Remove last character square
                                             TheText.text = TheText.text.Substring(0, TheText.text.Length - 1);
                                         }
@@ -84,102 +90,65 @@ public class zsDNAText : MonoBehaviour {
                                         enumDNATextMode = enumDNATextModes.WaitingAtEnd;
                                         //Set
                                         intNumberOfWaitsAtEndOfLine = 0;
+                                        //Reset
+                                        blnWhiteSquareBlink = true;
                                         //Reset timer
                                         fltWaitingAnimationTime = TimeWaitingAtEnd;
                                         //Increase index
                                         intIndex += 1;
-                                    } else if (blnCheckForGoingDownTwoLines(intIndex)) {
-                                        //Change DNA text mode and break down
-                                        ChangeDNATextModeAndBreakDown(TwoLineYMovement);
                                     } else if (blnCheckForGoingDownOneLine(intIndex)) {
                                         //Change DNA text mode and break down
                                         ChangeDNATextModeAndBreakDown(OneLineYMovement);
-                                        ////Increase index
-                                        intIndex += 1;
                                     } else {
                                         //Reset timer
                                         fltWaitingAnimationTime = TimeBetweenCharacters;
                                     }
                                     break;
                                 case enumDNATextModes.WaitingAtEnd: //"$"
-                                    //Check type of wait
-                                    switch (intNumberOfWaitsAtEndOfLine) {
-                                        default: //0
-                                        case 2:
-                                            //Remove last character square
-                                            TheText.text = TheText.text.Substring(0, TheText.text.Length - 1);
-                                            break;
-                                        case 1:
-                                            //Show white square at end
-                                            TheText.text += strWHITE_SQUARE;
-                                            break;
+                                    //Check blink
+                                    if (blnWhiteSquareBlink) {
+                                        //Remove last character square
+                                        TheText.text = TheText.text.Substring(0, TheText.text.Length - 1);
+                                    } else {
+                                        //Show white square at end
+                                        TheText.text += strWHITE_SQUARE;
                                     }
+                                    //Change blink variable
+                                    blnWhiteSquareBlink = !blnWhiteSquareBlink;
                                     //Increase
                                     intNumberOfWaitsAtEndOfLine += 1;
                                     //Check if number of waits is up
-                                    if (intNumberOfWaitsAtEndOfLine == intNUMBER_OF_WAITS_AT_END_OF_LINE) {
-                                        //Increase index to check the next character
-                                        intIndex += 1;
-
-                                        //string strWhatever1 = strText.Substring(intIndex, 1);
-                                        //string strWhatever2 = strText.Substring(intIndex-1, 1);
-                                        //string strWhatever3 = strText.Substring(intIndex+1, 1);
-                                        //string strWhatever4 = strText.Substring(intIndex+2, 1);
-
-                                        //Check for return
-                                        if (blnHasAReturnLine()) {
-                                            //Set DNA text mode
-                                            enumDNATextMode = enumDNATextModes.NewLines;
-                                            //Reset timer
-                                            fltWaitingAnimationTime = TimeBetweenLines;
-
-                                            //Decrease index
-                                            intIndex -= 1;
-                                            //Skip line
-                                            TheText.text += strText.Substring(intIndex, 2);
-                                            //Increase index
-                                            intIndex += 1;
-
-                                        } else if (blnCheckForGoingDownTwoLines(intIndex - 1)) {
-                                            //Change DNA text mode and break down
-                                            ChangeDNATextModeAndBreakDown(TwoLineYMovement);
-
-
-
-                                            ////Increase index
-                                            //intIndex += 1;
-
-                                        } else if (blnCheckForGoingDownOneLine(intIndex - 1)) {
-                                            //Change DNA text mode and break down
-                                            ChangeDNATextModeAndBreakDown(OneLineYMovement);
-
-
-
-
+                                    if (intNumberOfWaitsAtEndOfLine == intBlinkCount) {
+                                        //Check if index is not greater than the string text length
+                                        if (intIndex < strText.Length) {
+                                            //Check if has a return line
+                                            while (blnHasAReturnLine()) {
+                                                //Add to text
+                                                TheText.text += strText.Substring(intIndex, 1);
+                                                //Increase index
+                                                intIndex += 1;
+                                            }
+                                            //Check next character in the string text
+                                            if (blnCheckForGoingDownTwoLines(intIndex)) {
+                                                //Change DNA text mode and break down
+                                                ChangeDNATextModeAndBreakDown(TwoLineYMovement);
+                                            } else if (blnCheckForGoingDownOneLine(intIndex)) {
+                                                //Change DNA text mode and break down
+                                                ChangeDNATextModeAndBreakDown(OneLineYMovement);
+                                            } else {
+                                                //Set DNA text mode
+                                                enumDNATextMode = enumDNATextModes.RegularLine;
+                                                //Reset timer
+                                                fltWaitingAnimationTime = TimeBetweenCharacters;
+                                            }
                                         } else {
-                                            //Set DNA text mode
-                                            enumDNATextMode = enumDNATextModes.RegularLine;
                                             //Reset timer
-                                            fltWaitingAnimationTime = TimeBetweenCharacters;
-
-                                            //Decrease index
-                                            intIndex -= 1;
-                                            //Skip line
-                                            TheText.text += strText.Substring(intIndex, 2);
-                                            //Increase index
-                                            intIndex += 1;
-
+                                            fltWaitingAnimationTime = TimeWaitingAtEnd;
                                         }
                                     } else {
                                         //Reset timer
                                         fltWaitingAnimationTime = TimeWaitingAtEnd;
                                     }
-                                    break;
-                                case enumDNATextModes.NewLines: //"Return lines"
-                                    //Set DNA text mode
-                                    enumDNATextMode = enumDNATextModes.RegularLine;
-                                    //Reset timer
-                                    fltWaitingAnimationTime = TimeBetweenCharacters;
                                     break;
                             }
                         }
@@ -188,19 +157,10 @@ public class zsDNAText : MonoBehaviour {
                 case enumDNATextBreakDowns.Distance: // "/" and "|"
                     //Move up
                     if (transform.MoveTowardsCheck(new Vector3(transform.localPosition.x, fltLocalPositionY, 0f), LineMovementSpeed * Time.deltaTime, false)) {
-                        ////Check if going down two lines
-                        //if (blnCheckForGoingDownTwoLines()) {
-                        //    //intIndex += 2;
-                        //} else {
-                        //    intIndex += 1;
-                        //}
                         //Change break down mode
                         enumDNATextBreakDown = enumDNATextBreakDowns.Timer;
                         //Set DNA text mode
                         enumDNATextMode = enumDNATextModes.RegularLine;
-                        //Increase index
-                        //intIndex += 1;
-                        //intIndex += 2; //Figure out when to do intIndex += 1;
                         //Reset timer
                         fltWaitingAnimationTime = TimeBetweenCharacters;
                     }
@@ -212,6 +172,8 @@ public class zsDNAText : MonoBehaviour {
     private void ChangeDNATextModeAndBreakDown(float fltMovement) {
         //Set
         fltLocalPositionY = transform.localPosition.y + fltMovement;
+        //Increase index
+        intIndex += 1;
         //Change DNA text break down mode
         enumDNATextBreakDown = enumDNATextBreakDowns.Distance;
     }
@@ -228,9 +190,11 @@ public class zsDNAText : MonoBehaviour {
 
     private bool blnHasAReturnLine() {
         //Check length
-        if (intIndex < strText.Length - 2) {
+        if (intIndex < strText.Length - 1) {
+            //Declare
+            string strNewLine = strText.Substring(intIndex, 1);
             //Return
-            return strText.Substring(intIndex, 2) == System.Environment.NewLine;
+            return strNewLine == strRETURN || strNewLine == strNEW_LINE;
         } else {
             //Return
             return false;
