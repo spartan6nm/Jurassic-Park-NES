@@ -152,8 +152,10 @@ public class zsDNAText : MonoBehaviour {
                                         } else if (blnCheckForGoingDownOneLine(intIndex - 1)) {
                                             //Change DNA text mode and break down
                                             ChangeDNATextModeAndBreakDown(OneLineYMovement);
-                                            //Increase index
-                                            intIndex += 1;
+
+
+
+
                                         } else {
                                             //Set DNA text mode
                                             enumDNATextMode = enumDNATextModes.RegularLine;
