@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: f92e24c2413c40c468acec80226ea355
+guid: aaaad343d348a5f43aca290b1a6f1e7b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 128260267090306250
-    second: final_dna_strand_sprite_sheet_fixed_colors_0
+      213: -8972937447404602844
+    second: DNA_Strand_0
   - first:
-      213: 3836167446443096006
-    second: final_dna_strand_sprite_sheet_fixed_colors_1
+      213: 2280372302642139003
+    second: DNA_Strand_1
   - first:
-      213: -1657723208744257540
-    second: final_dna_strand_sprite_sheet_fixed_colors_2
+      213: 1263469450647715146
+    second: DNA_Strand_2
   - first:
-      213: -6385199187910656804
-    second: final_dna_strand_sprite_sheet_fixed_colors_3
+      213: -629062175227734093
+    second: DNA_Strand_3
   - first:
-      213: -955489313676818955
-    second: final_dna_strand_sprite_sheet_fixed_colors_4
+      213: 7409766799654999599
+    second: DNA_Strand_4
   - first:
-      213: -3281995277412469053
-    second: final_dna_strand_sprite_sheet_fixed_colors_5
+      213: 1621176487395693948
+    second: DNA_Strand_5
   - first:
-      213: -8441211216730429636
-    second: final_dna_strand_sprite_sheet_fixed_colors_6
+      213: 1371001913721218959
+    second: DNA_Strand_6
+  - first:
+      213: -8878534335330741104
+    second: DNA_Strand_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -107,11 +110,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: final_dna_strand_sprite_sheet_fixed_colors_0
+      name: DNA_Strand_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
+        x: 0
+        y: 0
         width: 72
         height: 256
       alignment: 0
@@ -121,18 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77b8fe0af753d8641a63f5f429b15513
-      internalID: 128260267090306250
+      spriteID: 9bcd698bc0d992144b304cfa2ff5622b
+      internalID: -8972937447404602844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final_dna_strand_sprite_sheet_fixed_colors_1
+      name: DNA_Strand_1
       rect:
         serializedVersion: 2
-        x: 74
-        y: 1
+        x: 73
+        y: 0
         width: 72
         height: 256
       alignment: 0
@@ -142,18 +145,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 753370850b0c56d4b88e52eac392c6d6
-      internalID: 3836167446443096006
+      spriteID: f70132aec3aadb449b7818ddb23d322f
+      internalID: 2280372302642139003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final_dna_strand_sprite_sheet_fixed_colors_2
+      name: DNA_Strand_2
       rect:
         serializedVersion: 2
-        x: 147
-        y: 1
+        x: 146
+        y: 0
         width: 72
         height: 256
       alignment: 0
@@ -163,18 +166,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acf6b6a74e0d6ab46a4dc36c4a344205
-      internalID: -1657723208744257540
+      spriteID: 7b9cca66401b09c4393a211a98c114cb
+      internalID: 1263469450647715146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final_dna_strand_sprite_sheet_fixed_colors_3
+      name: DNA_Strand_3
       rect:
         serializedVersion: 2
-        x: 220
-        y: 1
+        x: 219
+        y: 0
         width: 72
         height: 256
       alignment: 0
@@ -184,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c55d47f898e204f4c836221d72058945
-      internalID: -6385199187910656804
+      spriteID: a359ef6de7c359f44bacd6dd3004f73b
+      internalID: -629062175227734093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final_dna_strand_sprite_sheet_fixed_colors_4
+      name: DNA_Strand_4
       rect:
         serializedVersion: 2
-        x: 293
-        y: 1
-        width: 72
+        x: 291
+        y: 0
+        width: 73
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -205,18 +208,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 774dc0c22f9727149a6c51e65eafd5d4
-      internalID: -955489313676818955
+      spriteID: 7dedf1228553cc44baaab77abdcd5fbd
+      internalID: 7409766799654999599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final_dna_strand_sprite_sheet_fixed_colors_5
+      name: DNA_Strand_5
       rect:
         serializedVersion: 2
-        x: 366
-        y: 1
+        x: 365
+        y: 0
         width: 72
         height: 256
       alignment: 0
@@ -226,18 +229,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a0cb6966db8ab8418060f9dbf2a07a3
-      internalID: -3281995277412469053
+      spriteID: 35ff6b569ec5569488a977aeadffcb8e
+      internalID: 1621176487395693948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final_dna_strand_sprite_sheet_fixed_colors_6
+      name: DNA_Strand_6
       rect:
         serializedVersion: 2
-        x: 439
-        y: 1
+        x: 438
+        y: 0
         width: 72
         height: 256
       alignment: 0
@@ -247,8 +250,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8157d71ee0d8a0a468c765336c92e819
-      internalID: -8441211216730429636
+      spriteID: fd2fff1f916ac9e429f60750f62c29f4
+      internalID: 1371001913721218959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DNA_Strand_7
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 0
+        width: 72
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9556fa566c6e96f4e9bb6a54a720b7d5
+      internalID: -8878534335330741104
       vertices: []
       indices: 
       edges: []
@@ -256,7 +280,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 39eaceabfdbac144ab7d76c79b5fb295
     internalID: 0
     vertices: []
     indices: 
