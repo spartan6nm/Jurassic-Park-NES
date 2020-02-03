@@ -90,7 +90,7 @@ public class sShooting : MonoBehaviour
             //Reset line lifetime
             zsPublicStatics.Bullets.Lifetimes[intPoolIndex] = Bullets.Lifetime;
             //Position
-            zsPublicStatics.Bullets.GameObjects[intPoolIndex].transform.position = Weapon.position;
+            zsPublicStatics.Bullets.GameObjects[intPoolIndex].transform.position = new Vector3(Weapon.position.x, Weapon.position.y, 0.1f);
             //Enable or disable bullet
             EnableOrDisableBullet(intPoolIndex, true);
             //Make bullet move
