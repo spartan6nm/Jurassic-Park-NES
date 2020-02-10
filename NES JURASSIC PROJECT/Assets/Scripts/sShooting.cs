@@ -83,7 +83,7 @@ public class sShooting : MonoBehaviour
 
     void shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             //Declare
             int intPoolIndex = zsPublicStatics.gGetNextObjectPoolIndex(zsPublicStatics.Bullets);

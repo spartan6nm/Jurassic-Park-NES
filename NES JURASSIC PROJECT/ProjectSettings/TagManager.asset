@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bullet
+    uniqueID: 2053617019
+    locked: 0
   - name: Enviroment
     uniqueID: 3863391677
     locked: 0
